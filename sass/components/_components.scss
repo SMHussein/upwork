@@ -1,0 +1,574 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 14rem;
+  margin: 4rem 0 14rem 0;
+
+  @media only screen and (max-width: 62.5em) {
+    padding: 0 5rem;
+  }
+
+  @media only screen and (max-width: 50em) {
+    display: none;
+  }
+  .logo {
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__list {
+      list-style: none;
+      display: flex;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: 8.4rem;
+      }
+    }
+
+    &__link {
+      text-decoration: none;
+      font-size: 2rem;
+      color: $color-para;
+
+      span {
+        display: block;
+        width: 2.8rem;
+        height: 0.2rem;
+        margin: 0 auto;
+        margin-top: 0.6rem;
+        transition: background-color 0.2s;
+      }
+
+      .span--active {
+        background-color: $color-primary;
+      }
+    }
+
+    &__link:hover {
+      span {
+        background-color: $color-primary;
+      }
+    }
+  }
+
+  .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__img {
+      width: 3.7rem;
+      height: 3.7rem;
+      display: block;
+    }
+
+    &__name {
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-left: 1.2rem;
+    }
+  }
+}
+
+.main {
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 12%,
+    rgba($color-primary, 0.16) 12%
+  );
+  padding: 0 14rem 14rem;
+  display: grid;
+  grid-template-columns: min-content auto;
+  grid-template-rows: repeat(2, auto);
+
+  grid-gap: 6.3rem;
+
+  @media only screen and (max-width: 62.5em) {
+    justify-content: center;
+  }
+
+  @media only screen and (max-width: 50em) {
+    // grid-template-columns: 1fr;
+    // grid-template-rows: repeat(3, 1fr);
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media only screen and (max-width: 40.625em) {
+    padding: 0 5rem 5rem;
+  }
+
+  @media only screen and (max-width: 31.25em) {
+    padding: 0 0 5rem 0;
+  }
+}
+
+.amount {
+  font-size: 4rem;
+  font-weight: bold;
+  color: $color-primary;
+}
+.dash {
+  background-color: #ffffff;
+  padding: 6.5rem 4.5rem;
+  box-shadow: 1px 1px 1rem #30303029;
+  border-radius: 0.5rem;
+  display: inline-block;
+  text-align: center;
+  grid-row: 1/-1;
+  overflow: hidden;
+
+  @media only screen and (max-width: 31.25em) {
+    width: calc(100vw - 5rem);
+    margin: 0 auto;
+  }
+
+  @media only screen and (max-width: 25em) {
+    padding: 6.5rem 2.5rem;
+  }
+
+  &__figure {
+    width: 19.7rem;
+    height: 19.7rem;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__caption {
+    margin-bottom: 7.2rem;
+  }
+}
+
+.btn {
+  box-shadow: 1px 1px 3px #00000029;
+  text-decoration: none;
+  font-size: 2.4rem;
+  font-weight: bold;
+  display: block;
+  border-radius: 0.5rem;
+  margin: 0 auto 2.5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.8rem;
+  width: 24.9rem;
+  height: 6.9rem;
+  transition: transform 0.2s;
+
+  @media only screen and (max-width: 25em) {
+    width: 100%;
+  }
+
+  &:hover {
+    transform: translateY(-5%);
+  }
+
+  &--light {
+    color: $color-primary;
+    img {
+      width: 2.8rem;
+      height: 2.8rem;
+      fill: #ffffff;
+    }
+  }
+
+  &--primary {
+    color: #ffffff;
+    background-color: $color-primary;
+    img {
+      width: 2.7rem;
+      height: 2rem;
+    }
+  }
+}
+.wrapper {
+  position: relative;
+  background-color: $color-bg;
+  padding: 3.2rem 4rem 5rem 4rem;
+  border-radius: 1rem;
+  width: calc(100vw - 69rem);
+
+  @media only screen and (max-width: 62.5em) {
+    width: calc(100vw - 50rem);
+  }
+
+  @media only screen and (max-width: 50em) {
+    width: calc(100vw - 28rem);
+  }
+
+  @media only screen and (max-width: 40.625em) {
+    width: calc(100vw - 10rem);
+  }
+
+  @media only screen and (max-width: 31.25em) {
+    width: 100vw;
+  }
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  &__card {
+    flex: 0 0 36.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    height: 21.3rem;
+    padding: 0 0 0 2rem;
+    cursor: pointer;
+
+    @media only screen and (max-width: 71.25em) {
+      flex: 0 0 100%;
+    }
+
+    &:not(:last-child) {
+      margin-right: 2.3rem;
+    }
+
+    &:hover &__figure span {
+      background-color: rgba($color-primary, 0.5);
+    }
+
+    &__figure {
+      min-width: 14.5rem;
+      height: 16.2rem;
+      position: relative;
+
+      @media only screen and (max-width: 71.25em) {
+        display: none;
+      }
+
+      @media only screen and (max-width: 50em) {
+        display: block;
+      }
+
+      @media only screen and (max-width: 25em) {
+        display: none;
+      }
+
+      span {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        border-radius: 0.5rem;
+        background-color: transparent;
+        transition: all 0.2s;
+      }
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      box-shadow: 1px 1px 0.4rem #30303029;
+    }
+
+    &__content {
+      padding: 2.5rem 2rem;
+    }
+
+    &__rating {
+      list-style: none;
+      display: flex;
+      margin-bottom: 2rem;
+    }
+
+    &__list {
+    }
+
+    &__span--empty,
+    &__span--primary {
+      width: 1.2rem;
+      height: 1.2rem;
+      border-radius: 50%;
+      display: block;
+      margin-right: 0.4rem;
+    }
+
+    &__span--empty {
+      border: 1px solid $color-para;
+    }
+
+    &__span--primary {
+      background-color: $color-primary;
+    }
+
+    &__desc {
+      display: flex;
+      justify-content: space-between;
+      color: $color-para;
+      font-weight: bold;
+      font-size: 1rem;
+      &--num {
+      }
+
+      &--exp {
+      }
+    }
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(50%, -50%);
+  background-color: $color-primary;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  &:hover {
+    background-color: $color-para;
+  }
+
+  @media only screen and (max-width: 31.25em) {
+    right: 4rem;
+  }
+}
+
+.overlay {
+  background-color: rgba($color-primary, 0.4);
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.popup {
+  padding: 7.2rem;
+  background-color: #ffffff;
+  display: flex;
+  width: 105rem;
+  border-radius: 1.5rem;
+  position: relative;
+
+  @media only screen and (max-width: 50em) {
+    justify-content: center;
+    width: 80%;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    color: $color-primary;
+    font-weight: bold;
+    margin-bottom: 1.1rem;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.6rem;
+  }
+
+  &__item {
+    img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+    margin-right: 0.1rem;
+  }
+
+  &__number {
+    font-size: 1.4rem;
+    margin-left: 0.7rem;
+    font-family: auto;
+  }
+
+  &__figure {
+    width: 42.4rem;
+    height: 42.4rem;
+    margin-right: 5.2rem;
+
+    @media only screen and (max-width: 50em) {
+      width: 50%;
+      height: 50%;
+    }
+
+    @media only screen and (max-width: 37.5em) {
+      display: none;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 1rem #30303029;
+  }
+
+  &__desc {
+    margin-bottom: 3rem;
+    p {
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+
+  &__cong {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.1rem;
+  }
+
+  &__para {
+    font-size: 1.4rem;
+  }
+
+  &__btn {
+    text-decoration: none;
+    display: inline-block;
+    color: #ffffff;
+    background-color: $color-primary;
+    padding: 0.75rem 0;
+    font-size: 1.6rem;
+    border-radius: 0.5rem;
+    width: 10.1rem;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 8rem;
+  }
+
+  &__span {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 7.2rem;
+    right: 7.2rem;
+    width: 2.1rem;
+    height: 2.1rem;
+    cursor: pointer;
+  }
+
+  &__heart {
+    right: 9.7rem;
+    top: 7.4rem;
+  }
+
+  &__share {
+    height: 2.4rem;
+  }
+}
+
+.visible {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.collapse {
+  display: none;
+  padding: 5rem 5rem;
+
+  @media only screen and (max-width: 50em) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: 31.25em) {
+    padding: 5rem 2.5rem;
+  }
+}
+
+.bur {
+  cursor: pointer;
+  span {
+    display: block;
+    background-color: $color-primary;
+    width: 1.9rem;
+    height: 0.25rem;
+    &:not(:last-child) {
+      margin-bottom: 0.45rem;
+    }
+  }
+
+  &__search {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  &__nav {
+    position: absolute;
+    background-color: $color-para;
+    transform: translateX(-110%);
+    width: 80%;
+    height: 200vh;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 120;
+    transition: all 0.5s;
+  }
+
+  &__logo {
+    width: 19.5rem;
+    height: 11.7rem;
+    display: block;
+    margin: 5.8rem auto 4.42rem auto;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding: 2rem 3.7rem;
+    border-bottom: 1px solid #818080;
+
+    &:first-child {
+      border-top: 1px solid #818080;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.6rem;
+    img {
+      margin-right: 1.2rem;
+    }
+  }
+}
+
+.show {
+  transform: translateX(0);
+}

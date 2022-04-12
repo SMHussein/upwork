@@ -1,0 +1,26 @@
+.heading--primary {
+  font-size: 3rem;
+  font-weight: bold;
+  color: $color-para;
+  margin-bottom: 1.7rem;
+}
+
+.heading--secondary {
+  font-size: 2rem;
+  color: $color-primary;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.heading--tertiary {
+  font-size: 1.6rem;
+  color: $color-primary;
+  margin-bottom: 1.7rem;
+}
+
+.paragraph {
+  font-size: 1.2rem;
+  color: $color-para;
+  font-weight: 500;
+  margin-bottom: 2.2rem;
+}
